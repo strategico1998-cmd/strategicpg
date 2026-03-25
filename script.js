@@ -126,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = form.querySelector('#name').value;
             const email = form.querySelector('#email').value;
             const phone = form.querySelector('#phone').value;
-            const industry = form.querySelector('#industry').value;
+            const industryEl = form.querySelector('#industry');
+            const industry = industryEl ? industryEl.value : 'No especificado';
             const service = form.querySelector('#form-service').value;
             const baseMsg = form.querySelector('#form-base-msg').value;
 
