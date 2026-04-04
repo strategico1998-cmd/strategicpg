@@ -226,26 +226,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Script Injection
-    function injectHTML(htmlString, parent) {
-        if (!htmlString) return;
-        const temp = document.createElement('div');
-        temp.innerHTML = htmlString;
-        Array.from(temp.childNodes).forEach(node => {
-            if (node.tagName && node.tagName.toUpperCase() === 'SCRIPT') {
-                const scriptNode = document.createElement('script');
-                Array.from(node.attributes).forEach(attr => scriptNode.setAttribute(attr.name, attr.value));
-                scriptNode.textContent = node.textContent;
-                parent.appendChild(scriptNode);
-            } else {
-                parent.appendChild(node.cloneNode(true));
-            }
-        });
-    }
-
     const headCode = localStorage.getItem('str_head_scripts');
     const bodyCode = localStorage.getItem('str_body_scripts');
-    injectHTML(headCode, document.head);
-    injectHTML(bodyCode, document.body);
+    if (headCode) document.head.insertAdjacentHTML('beforeend', headCode);
+    if (bodyCode) document.body.insertAdjacentHTML('beforeend', bodyCode);
 
     // 4. Dynamic Blog Loader
     const blogContainer = document.getElementById('blog-posts-container');
