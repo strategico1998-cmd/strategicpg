@@ -1,18 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- Mobile Menu Toggle ---
-    const menuToggle = document.createElement('button');
-    menuToggle.className = 'menu-toggle';
-    menuToggle.innerHTML = '<span></span><span></span><span></span>';
-    menuToggle.setAttribute('aria-label', 'Menu de navegación');
-    
     const navContent = document.querySelector('.nav-content');
     const navLinks = document.querySelector('.nav-links');
     
     if (navContent && navLinks) {
-        navContent.appendChild(menuToggle);
+        // Prevent duplicate menu toggles
+        let menuToggle = navContent.querySelector('.menu-toggle');
+        if (!menuToggle) {
+            menuToggle = document.createElement('button');
+            menuToggle.className = 'menu-toggle';
+            menuToggle.innerHTML = '<span></span><span></span><span></span>';
+            menuToggle.setAttribute('aria-label', 'Menu de navegación');
+            navContent.appendChild(menuToggle);
+        }
         
-        menuToggle.addEventListener('click', () => {
+        // Ensure only one click listener (by cloning and replacing or just adding if not present)
+        // We'll use a simple flag to avoid cloning if not needed, or just clone to be sure.
+        const newToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+        menuToggle = newToggle;
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopImmediatePropagation();
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
@@ -89,9 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Accordion Logic ---
-    const accordions = document.querySelectorAll('.accordion-header');
-    accordions.forEach(acc => {
-        acc.addEventListener('click', function() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(acc => {
+        const newAcc = acc.cloneNode(true);
+        acc.parentNode.replaceChild(newAcc, acc);
+        
+        newAcc.addEventListener('click', function() {
             this.classList.toggle('active');
             const content = this.nextElementSibling;
             if (content.style.maxHeight) {
