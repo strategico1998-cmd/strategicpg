@@ -85,74 +85,109 @@
         <section class="section" id="servicios-home" style="background: linear-gradient(180deg, rgba(255,0,0,0.05) 0%, rgba(5,5,5,1) 100%); padding: 8rem 0;">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 5rem;">
-                    <h2 class="reveal" style="margin-bottom: 1.5rem;">INGENIERÍA DE <span class="accent-text">PROS.</span></h2>
-                    <p class="reveal" style="max-width: 750px; margin: 0 auto; opacity: 0.9; font-size: 1.1rem; line-height: 1.7; font-weight: 500;">
+                    <h2 class="reveal" style="margin-bottom: 1rem;">INGENIERÍA DE <span class="accent-text">PROS.</span></h2>
+                    <p class="reveal" style="max-width: 750px; margin: 0 auto 2rem; opacity: 1; font-size: 1.4rem; line-height: 1.4; font-weight: 800; color: #fff; font-family: var(--font-heading);">
+                        Hago que mis clientes consigan clientes de forma constante.
+                    </p>
+                    <p class="reveal" style="max-width: 750px; margin: 0 auto; opacity: 0.7; font-size: 1rem; line-height: 1.7; font-weight: 400;">
                         Construye los cimientos de tu negocio: Un Ecosistema Digital diseñado para vender en piloto automático.
                     </p>
                 </div>
+
+                <!-- CALCULADORA DE INVERSIÓN -->
+                <div class="calculator-container reveal" style="margin-bottom: 6rem;">
+                    <div class="calculator-card">
+                        <div class="calc-header">
+                            <h3>PROYECTA TU <span class="accent-text">CRECIMIENTO</span></h3>
+                            <div class="calc-modes">
+                                <button class="mode-btn active" data-mode="leads">LEADS / CITAS</button>
+                                <button class="mode-btn" data-mode="ecommerce">E-COMMERCE</button>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-body">
+                            <div class="slider-section">
+                                <div class="slider-labels">
+                                    <span class="label-text">Inversión Publicitaria:</span>
+                                    <span class="investment-value" id="investment-display">$ 1.500.000</span>
+                                </div>
+                                <input type="range" id="investment-slider" min="1500000" max="24000000" step="500000" value="1500000" class="premium-slider">
+                                <div class="range-extremos">
+                                    <span>min $1.5M</span>
+                                    <span>max $24M</span>
+                                </div>
+                            </div>
+
+                            <div class="results-display">
+                                <div class="result-item">
+                                    <span class="res-label">RESULTADO ESTIMADO: <span class="info-icon" title="Esta es una estimación basada en promedios de la industria. El resultado real dependerá de múltiples factores técnicos y estratégicos de tu negocio.">?</span></span>
+                                    <div class="res-value" id="result-value">60 - 100 <span>Leads Cualificados</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.7rem; opacity: 0.4; margin-top: 1.5rem; text-align: center; text-transform: uppercase; letter-spacing: 1px;">* Estos cálculos son estimaciones basadas en promedios de la industria.</p>
+                    </div>
+                </div>
                 <div class="grid" style="gap: 3rem; align-items: start;">
                     <article class="card reveal" style="transition-delay: 0.1s;">
-                        <img src="./assets/ape_services.png" alt="Digital Strategist Ape for Paid Media" class="card-img" loading="lazy">
-                        <h3>PLAN NOVA</h3>
-                        <p class="plan-price">$4.000.000 COP / mes</p>
+                        <img src="./assets/ape_services.png" alt="Propulsor Orbital" class="card-img" loading="lazy">
+                        <h3>PROPULSOR ORBITAL</h3>
                         <div class="accordion">
                             <div class="accordion-item">
                                 <button class="accordion-header">Servicios Incluidos</button>
                                 <div class="accordion-content">
                                     <ul class="service-details">
-                                        <li>Campañas publicitarias</li>
-                                        <li>Creación de contenido y conexiones</li>
-                                        <li>Análisis de campañas</li>
-                                        <li>Configuración digital</li>
+                                        <li>Validar campañas y creativos</li>
+                                        <li>1 campaña / 2-3 conjuntos</li>
+                                        <li>Optimización 2-3 veces/semana</li>
+                                        <li>Reporte mensual de rendimiento</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Plan Nova" data-msg="Hola STRATEGIC, me interesa el Plan Nova ($4M).">SOLICITAR PLAN</button>
+                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Propulsor Orbital" data-msg="Hola STRATEGIC, me interesa el Propulsor Orbital.">CONTÁCTANOS</button>
                     </article>
 
                     <article class="card reveal" style="border: 2px solid var(--accent); background: rgba(255,0,0,0.03); transition-delay: 0.2s; transform: scale(1.05); box-shadow: 0 20px 50px rgba(255,0,0,0.1);">
-                        <img src="./assets/ape_hero.png" alt="Expert Strategist Ape for Growth" class="card-img" loading="lazy">
-                        <h3>PLAN PÚLSAR</h3>
-                        <p class="plan-price">$8.000.000 COP / mes</p>
+                        <img src="./assets/ape_hero.png" alt="Órbita de Crecimiento" class="card-img" loading="lazy">
+                        <h3>ÓRBITA DE CRECIMIENTO</h3>
                         <div class="accordion">
                             <div class="accordion-item">
                                 <button class="accordion-header">Servicios Incluidos</button>
                                 <div class="accordion-content">
                                     <ul class="service-details">
-                                        <li>Campañas en Meta y Google Ads</li>
-                                        <li>Estrategias de Remarketing</li>
-                                        <li>Embudos de ventas (Funnels)</li>
-                                        <li>10 piezas gráficas y 4 videos</li>
-                                        <li>Automatización de CRM y Leads</li>
-                                        <li>Dashboard y optimización bi-semanal</li>
+                                        <li>Estabilizar y escalar resultados</li>
+                                        <li>2-4 campañas (Prospección + Remarketing)</li>
+                                        <li>Test continuo de audiencias</li>
+                                        <li>Optimización constante (48h)</li>
+                                        <li>Ajustes de presupuesto por rendimiento</li>
+                                        <li>Reporte quincenal o mensual</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Plan Púlsar" data-msg="Hola STRATEGIC, me interesa el Plan Púlsar ($8M).">SOLICITAR PÚLSAR</button>
+                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Órbita de Crecimiento" data-msg="Hola STRATEGIC, me interesa la Órbita de Crecimiento.">CONTÁCTANOS</button>
                     </article>
 
                     <article class="card reveal" style="transition-delay: 0.3s;">
-                        <img src="./assets/ape_contact.png" alt="Advanced Analyst Ape for Scaling" class="card-img" loading="lazy">
-                        <h3>PLAN QUÁSAR</h3>
-                        <p class="plan-price">$24.000.000 COP / mes</p>
+                        <img src="./assets/ape_contact.png" alt="Expansión Galáctica" class="card-img" loading="lazy">
+                        <h3>EXPANSIÓN GALÁCTICA</h3>
                         <div class="accordion">
                             <div class="accordion-item">
                                 <button class="accordion-header">Servicios Incluidos</button>
                                 <div class="accordion-content">
                                     <ul class="service-details">
-                                        <li>Estrategia Omnicanal de escalado</li>
-                                        <li>Retargeting dinámico avanzado</li>
-                                        <li>Funnels de alta conversión y CRO</li>
-                                        <li>Contenido premium (15+ piezas, 8 videos)</li>
-                                        <li>Automatización CRM con Inteligencia Artificial</li>
-                                        <li>Asesor VIP y Dashboard en tiempo real</li>
+                                        <li>Escalamiento agresivo full-funnel</li>
+                                        <li>4-8 campañas activas</li>
+                                        <li>Optimización diaria avanzada</li>
+                                        <li>Escalamiento vertical y horizontal</li>
+                                        <li>Redistribución estratégica</li>
+                                        <li>Reporte semanal de métricas clave</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Plan Quásar" data-msg="Hola STRATEGIC, quiero escalar con el Plan Quásar ($24M).">ESCALAR AHORA</button>
+                        <button class="btn open-form" style="width: 100%; margin-top: 1.5rem;" data-service="Expansión Galáctica" data-msg="Hola STRATEGIC, quiero escalar con la Expansión Galáctica.">CONTÁCTANOS</button>
                     </article>
                 </div>
             </div>

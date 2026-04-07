@@ -282,4 +282,47 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- Investment Calculator Logic ---
+    const slider = document.getElementById('investment-slider');
+    const display = document.getElementById('investment-display');
+    const resultValue = document.getElementById('result-value');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+
+    if (slider && display && resultValue) {
+        let currentMode = 'leads';
+
+        const updateCalculator = () => {
+            const val = parseInt(slider.value);
+            display.innerText = `$ ${val.toLocaleString('es-CO')}`;
+
+            if (currentMode === 'leads') {
+                // Formula: Inversión / CPL (Cost per Lead)
+                // CPL approx: $20.000 COP
+                const leadsMin = Math.floor(val / 25000);
+                const leadsMax = Math.floor(val / 15000);
+                resultValue.innerHTML = `${leadsMin.toLocaleString()} - ${leadsMax.toLocaleString()} <span>Leads Cualificados / mes</span>`;
+            } else {
+                // Formula: Inversión * ROAS
+                // ROAS approx: 3.5 - 6.0
+                const revMin = val * 3.5;
+                const revMax = val * 6;
+                resultValue.innerHTML = `$ ${revMin.toLocaleString('es-CO')} - $ ${revMax.toLocaleString('es-CO')} <span>Facturación Estimada / mes</span>`;
+            }
+        };
+
+        slider.addEventListener('input', updateCalculator);
+
+        modeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMode = btn.getAttribute('data-mode');
+                updateCalculator();
+            });
+        });
+
+        // Initial call
+        updateCalculator();
+    }
 });
