@@ -283,46 +283,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Investment Calculator Logic ---
-    const slider = document.getElementById('investment-slider');
-    const display = document.getElementById('investment-display');
-    const resultValue = document.getElementById('result-value');
-    const modeBtns = document.querySelectorAll('.mode-btn');
+    // --- Investment Calculators (Dual System) ---
+    const leadsSlider = document.getElementById('leads-slider');
+    const leadsDisplay = document.getElementById('leads-investment-display');
+    const leadsResult = document.getElementById('leads-result-value');
 
-    if (slider && display && resultValue) {
-        let currentMode = 'leads';
+    const ecomSlider = document.getElementById('ecom-slider');
+    const ecomDisplay = document.getElementById('ecom-investment-display');
+    const ecomResult = document.getElementById('ecom-result-value');
 
-        const updateCalculator = () => {
-            const val = parseInt(slider.value);
-            display.innerText = `$ ${val.toLocaleString('es-CO')}`;
-
-            if (currentMode === 'leads') {
-                // Formula: Inversión / CPL (Cost per Lead)
-                // CPL approx: $20.000 COP
-                const leadsMin = Math.floor(val / 25000);
-                const leadsMax = Math.floor(val / 15000);
-                resultValue.innerHTML = `${leadsMin.toLocaleString()} - ${leadsMax.toLocaleString()} <span>Leads Cualificados / mes</span>`;
-            } else {
-                // Formula: Inversión * ROAS
-                // ROAS approx: 3.5 - 6.0
-                const revMin = val * 3.5;
-                const revMax = val * 6;
-                resultValue.innerHTML = `$ ${revMin.toLocaleString('es-CO')} - $ ${revMax.toLocaleString('es-CO')} <span>Facturación Estimada / mes</span>`;
-            }
+    if (leadsSlider && leadsDisplay && leadsResult) {
+        const updateLeads = () => {
+            const val = parseInt(leadsSlider.value);
+            leadsDisplay.innerText = `$ ${val.toLocaleString('es-CO')}`;
+            // Formula: $3.000.000 -> 120-200 Leads approx.
+            // CPL approx: $25k - $15k
+            const min = Math.floor(val / 25000);
+            const max = Math.floor(val / 15000);
+            leadsResult.innerHTML = `${min.toLocaleString()} - ${max.toLocaleString()} <span>Leads Cualificados / mes</span>`;
         };
+        leadsSlider.addEventListener('input', updateLeads);
+        updateLeads();
+    }
 
-        slider.addEventListener('input', updateCalculator);
-
-        modeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                modeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentMode = btn.getAttribute('data-mode');
-                updateCalculator();
-            });
-        });
-
-        // Initial call
-        updateCalculator();
+    if (ecomSlider && ecomDisplay && ecomResult) {
+        const updateEcom = () => {
+            const val = parseInt(ecomSlider.value);
+            ecomDisplay.innerText = `$ ${val.toLocaleString('es-CO')}`;
+            // Formula: val * ROAS (approx 3.5 - 6.0)
+            const minRev = val * 3.5;
+            const maxRev = val * 6;
+            ecomResult.innerHTML = `$ ${minRev.toLocaleString('es-CO')} - $ ${maxRev.toLocaleString('es-CO')} <span>Facturación Estimada / mes</span>`;
+        };
+        ecomSlider.addEventListener('input', updateEcom);
+        updateEcom();
     }
 });

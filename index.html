@@ -94,39 +94,58 @@
                     </p>
                 </div>
 
-                <!-- CALCULADORA DE INVERSIÓN -->
-                <div class="calculator-container reveal" style="margin-bottom: 6rem;">
-                    <div class="calculator-card">
-                        <div class="calc-header">
-                            <h3>PROYECTA TU <span class="accent-text">CRECIMIENTO</span></h3>
-                            <div class="calc-modes">
-                                <button class="mode-btn active" data-mode="leads">LEADS / CITAS</button>
-                                <button class="mode-btn" data-mode="ecommerce">E-COMMERCE</button>
+                <!-- CALCULADORA DE INVERSIÓN (REDISEÑADA: SMALL & SPLIT) -->
+                <div class="calculator-wrapper reveal" style="margin-bottom: 6rem;">
+                    <div class="calculator-grid">
+                        <!-- SMALL CARD: LEADS -->
+                        <div class="calculator-card small-calc">
+                            <div class="calc-header-small">
+                                <h4>PROYECCIÓN <span class="accent-text">LEADS / CITAS</span></h4>
+                            </div>
+                            <div class="calc-body-small">
+                                <div class="slider-section-small">
+                                    <div class="slider-labels">
+                                        <span class="label-text">INVERSIÓN:</span>
+                                        <span class="investment-value-small" id="leads-investment-display">$ 3.000.000</span>
+                                    </div>
+                                    <input type="range" id="leads-slider" min="3000000" max="24000000" step="500000" value="3000000" class="premium-slider-small">
+                                    <div class="range-extremos">
+                                        <span>min $3M</span>
+                                        <span>max $24M</span>
+                                    </div>
+                                </div>
+                                <div class="results-display-small">
+                                    <span class="res-label-small">RESULTADO ESTIMADO:</span>
+                                    <div class="res-value-small" id="leads-result-value">120 - 200 <span>Leads Cualificados / mes</span></div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="calc-body">
-                            <div class="slider-section">
-                                <div class="slider-labels">
-                                    <span class="label-text">Inversión Publicitaria:</span>
-                                    <span class="investment-value" id="investment-display">$ 1.500.000</span>
-                                </div>
-                                <input type="range" id="investment-slider" min="1500000" max="24000000" step="500000" value="1500000" class="premium-slider">
-                                <div class="range-extremos">
-                                    <span>min $1.5M</span>
-                                    <span>max $24M</span>
-                                </div>
-                            </div>
 
-                            <div class="results-display">
-                                <div class="result-item">
-                                    <span class="res-label">RESULTADO ESTIMADO: <span class="info-icon" title="Esta es una estimación basada en promedios de la industria. El resultado real dependerá de múltiples factores técnicos y estratégicos de tu negocio.">?</span></span>
-                                    <div class="res-value" id="result-value">60 - 100 <span>Leads Cualificados</span></div>
+                        <!-- SMALL CARD: E-COMMERCE -->
+                        <div class="calculator-card small-calc">
+                            <div class="calc-header-small">
+                                <h4>PROYECCIÓN <span class="accent-text">E-COMMERCE / VENTAS</span></h4>
+                            </div>
+                            <div class="calc-body-small">
+                                <div class="slider-section-small">
+                                    <div class="slider-labels">
+                                        <span class="label-text">INVERSIÓN:</span>
+                                        <span class="investment-value-small" id="ecom-investment-display">$ 3.000.000</span>
+                                    </div>
+                                    <input type="range" id="ecom-slider" min="3000000" max="24000000" step="500000" value="3000000" class="premium-slider-small">
+                                    <div class="range-extremos">
+                                        <span>min $3M</span>
+                                        <span>max $24M</span>
+                                    </div>
+                                </div>
+                                <div class="results-display-small">
+                                    <span class="res-label-small">FACTURACIÓN ESTIMADA:</span>
+                                    <div class="res-value-small" id="ecom-result-value">$ 10.500.000 - $ 18.000.000 <span>Ventas Potenciales / mes</span></div>
                                 </div>
                             </div>
                         </div>
-                        <p style="font-size: 0.7rem; opacity: 0.4; margin-top: 1.5rem; text-align: center; text-transform: uppercase; letter-spacing: 1px;">* Estos cálculos son estimaciones basadas en promedios de la industria.</p>
                     </div>
+                    <p style="font-size: 0.65rem; opacity: 0.4; margin-top: 1.5rem; text-align: center; text-transform: uppercase; letter-spacing: 1px;">* Cálculos basados en promedios del mercado 2026. Los resultados reales pueden variar.</p>
                 </div>
                 <div class="grid" style="gap: 3rem; align-items: start;">
                     <article class="card reveal" style="transition-delay: 0.1s;">
