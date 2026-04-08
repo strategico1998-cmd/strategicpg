@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /admin
 
-Sitemap: https://strategic.live/sitemap.xml
+Sitemap: https://sapiens.live/sitemap.xml

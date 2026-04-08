@@ -10,7 +10,7 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BACKEND | PANEL DE CONTROL ESTRATÉGICO</title>
+    <title>BACKEND | PANEL DE CONTROL SAPIENS</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -105,7 +105,7 @@
     <!-- MAIN DASHBOARD -->
     <div id="main-dashboard">
         <aside class="sidebar">
-            <h2 style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--accent-red);">STRATEGIC.<span style="color:#fff">ADM</span></h2>
+            <h2 style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--accent-red);">SAPIENS.<span style="color:#fff">ADM</span></h2>
             <nav id="dashboard-nav">
                 <div class="nav-item active" data-view="overview">Resumen General</div>
                 <div class="nav-item" data-view="analytics">Analítica Detallada</div>
@@ -311,7 +311,7 @@
             const loginScreen = document.getElementById('login-screen');
             const mainDash = document.getElementById('main-dashboard');
 
-            if (sessionStorage.getItem('str_session') === 'active') unlock();
+            if (sessionStorage.getItem('sap_session') === 'active') unlock();
 
             // LOGIN LOGIC
             loginForm.addEventListener('submit', (e) => {
@@ -320,11 +320,11 @@
                 const p = document.getElementById('adm-pass').value.trim();
                 
                 // Check against hardcoded or local admins
-                const extraAdmins = JSON.parse(localStorage.getItem('str_admins') || "[]");
+                const extraAdmins = JSON.parse(localStorage.getItem('sap_admins') || "[]");
                 const isValidExtra = extraAdmins.some(adm => adm.u === u && adm.p === p);
 
                 if ((u === KEY_U && p === KEY_P) || isValidExtra) {
-                    sessionStorage.setItem('str_session', 'active');
+                    sessionStorage.setItem('sap_session', 'active');
                     unlock();
                 } else {
                     document.getElementById('error-msg').style.display = 'block';
@@ -355,12 +355,12 @@
             });
 
             function loadMetrics() {
-                document.getElementById('v-count').innerText = localStorage.getItem('str_visits') || "0";
-                document.getElementById('c-count').innerText = localStorage.getItem('str_total_clicks') || "0";
+                document.getElementById('v-count').innerText = localStorage.getItem('sap_visits') || "0";
+                document.getElementById('c-count').innerText = localStorage.getItem('sap_total_clicks') || "0";
                 
                 // Performance
-                const mHist = JSON.parse(localStorage.getItem('str_load_mobile') || "[]");
-                const dHist = JSON.parse(localStorage.getItem('str_load_desktop') || "[]");
+                const mHist = JSON.parse(localStorage.getItem('sap_load_mobile') || "[]");
+                const dHist = JSON.parse(localStorage.getItem('sap_load_desktop') || "[]");
                 const avgM = mHist.length ? Math.round(mHist.reduce((a,b)=>a+b)/mHist.length) : 0;
                 const avgD = dHist.length ? Math.round(dHist.reduce((a,b)=>a+b)/dHist.length) : 0;
 
@@ -370,7 +370,7 @@
                 document.getElementById('d-fill').style.width = Math.min(100, (avgD/2000)*100) + "%";
 
                 // Buttons
-                const stats = JSON.parse(localStorage.getItem('str_btn_stats') || "{}");
+                const stats = JSON.parse(localStorage.getItem('sap_btn_stats') || "{}");
                 const list = document.getElementById('btn-list');
                 list.innerHTML = '';
                 Object.entries(stats).sort((a,b) => b[1] - a[1]).forEach(([name, count]) => {
@@ -381,12 +381,12 @@
                 });
 
                 // Scripts
-                document.getElementById('h-scripts').value = localStorage.getItem('str_head_scripts') || '';
-                document.getElementById('b-scripts').value = localStorage.getItem('str_body_scripts') || '';
+                document.getElementById('h-scripts').value = localStorage.getItem('sap_head_scripts') || '';
+                document.getElementById('b-scripts').value = localStorage.getItem('sap_body_scripts') || '';
 
                 // Load Logs
                 const logsList = document.getElementById('load-logs-list');
-                const logs = JSON.parse(localStorage.getItem('str_load_logs') || "[]");
+                const logs = JSON.parse(localStorage.getItem('sap_load_logs') || "[]");
                 if(logsList) {
                     logsList.innerHTML = '';
                     logs.forEach(log => {
@@ -484,7 +484,7 @@
                 
                 if(!title || !content) return alert('COMPLETA LOS CAMPOS');
                 
-                const posts = JSON.parse(localStorage.getItem('str_blog_posts') || "[]");
+                const posts = JSON.parse(localStorage.getItem('sap_blog_posts') || "[]");
                 
                 if(editIndex > -1) {
                     posts[editIndex] = { ...posts[editIndex], title, content, image };
@@ -494,7 +494,7 @@
                     alert('ARTÍCULO PUBLICADO');
                 }
 
-                localStorage.setItem('str_blog_posts', JSON.stringify(posts));
+                localStorage.setItem('sap_blog_posts', JSON.stringify(posts));
                 resetBlogForm();
                 renderBlogList();
             });
@@ -515,7 +515,7 @@
             function renderBlogList() {
                 const list = document.getElementById('admin-blog-list');
                 if(!list) return;
-                const posts = JSON.parse(localStorage.getItem('str_blog_posts') || "[]");
+                const posts = JSON.parse(localStorage.getItem('sap_blog_posts') || "[]");
                 list.innerHTML = '';
                 posts.forEach((post, index) => {
                     const row = document.createElement('div');
@@ -535,7 +535,7 @@
             }
 
             window.editPost = (index) => {
-                const posts = JSON.parse(localStorage.getItem('str_blog_posts') || "[]");
+                const posts = JSON.parse(localStorage.getItem('sap_blog_posts') || "[]");
                 const post = posts[index];
                 if(!post) return;
 
@@ -555,9 +555,9 @@
 
             window.deletePost = (index) => {
                 if(confirm('¿ELIMINAR ESTE ARTÍCULO?')) {
-                    const posts = JSON.parse(localStorage.getItem('str_blog_posts') || "[]");
+                    const posts = JSON.parse(localStorage.getItem('sap_blog_posts') || "[]");
                     posts.splice(index, 1);
-                    localStorage.setItem('str_blog_posts', JSON.stringify(posts));
+                    localStorage.setItem('sap_blog_posts', JSON.stringify(posts));
                     renderBlogList();
                 }
             };
@@ -568,9 +568,9 @@
                 const p = document.getElementById('new-admin-pass').value.trim();
                 if(!u || !p) return;
                 
-                const extraAdmins = JSON.parse(localStorage.getItem('str_admins') || "[]");
+                const extraAdmins = JSON.parse(localStorage.getItem('sap_admins') || "[]");
                 extraAdmins.push({ u, p });
-                localStorage.setItem('str_admins', JSON.stringify(extraAdmins));
+                localStorage.setItem('sap_admins', JSON.stringify(extraAdmins));
                 renderAdmins();
                 document.getElementById('new-admin-user').value = '';
                 document.getElementById('new-admin-pass').value = '';
@@ -578,7 +578,7 @@
 
             function renderAdmins() {
                 const list = document.getElementById('admin-list');
-                const extraAdmins = JSON.parse(localStorage.getItem('str_admins') || "[]");
+                const extraAdmins = JSON.parse(localStorage.getItem('sap_admins') || "[]");
                 list.innerHTML = `<div style="display:flex; justify-content:space-between; padding: 1rem; border-bottom: 1px solid #331111;"><span>Duban (Principal)</span><span style="color:var(--accent-red)">ACTIVO</span></div>`;
                 extraAdmins.forEach(adm => {
                     list.innerHTML += `<div style="display:flex; justify-content:space-between; padding: 1rem; border-bottom: 1px solid #331111;"><span>${adm.u}</span><span style="color:#666">ADMIN</span></div>`;
@@ -588,12 +588,12 @@
             // BOTONES DE ACCIÓN GLOBALES
             const handleDownload = () => {
                 const data = {
-                    visits: localStorage.getItem('str_visits'),
-                    clicks: localStorage.getItem('str_total_clicks'),
-                    buttons: JSON.parse(localStorage.getItem('str_btn_stats') || "{}"),
+                    visits: localStorage.getItem('sap_visits'),
+                    clicks: localStorage.getItem('sap_total_clicks'),
+                    buttons: JSON.parse(localStorage.getItem('sap_btn_stats') || "{}"),
                     performance: {
-                        mobile: JSON.parse(localStorage.getItem('str_load_mobile') || "[]"),
-                        desktop: JSON.parse(localStorage.getItem('str_load_desktop') || "[]")
+                        mobile: JSON.parse(localStorage.getItem('sap_load_mobile') || "[]"),
+                        desktop: JSON.parse(localStorage.getItem('sap_load_desktop') || "[]")
                     },
                     exportDate: new Date().toISOString()
                 };
@@ -607,11 +607,11 @@
 
             const handleReset = () => {
                 if(confirm('¿ESTÁS SEGURO DE REINICIAR TODAS LAS MÉTRICAS? ESTA ACCIÓN NO SE PUEDE DESHACER.')) {
-                    localStorage.removeItem('str_visits');
-                    localStorage.removeItem('str_total_clicks');
-                    localStorage.removeItem('str_btn_stats');
-                    localStorage.removeItem('str_load_mobile');
-                    localStorage.removeItem('str_load_desktop');
+                    localStorage.removeItem('sap_visits');
+                    localStorage.removeItem('sap_total_clicks');
+                    localStorage.removeItem('sap_btn_stats');
+                    localStorage.removeItem('sap_load_mobile');
+                    localStorage.removeItem('sap_load_desktop');
                     location.reload();
                 }
             };
@@ -620,14 +620,14 @@
             document.getElementById('reset-stats-global').addEventListener('click', handleReset);
 
             document.getElementById('save-scripts').addEventListener('click', () => {
-                localStorage.setItem('str_head_scripts', document.getElementById('h-scripts').value);
-                localStorage.setItem('str_body_scripts', document.getElementById('b-scripts').value);
+                localStorage.setItem('sap_head_scripts', document.getElementById('h-scripts').value);
+                localStorage.setItem('sap_body_scripts', document.getElementById('b-scripts').value);
                 alert('ESTRATEGIA SEO ACTUALIZADA');
             });
 
             function renderLeads() {
                 const list = document.getElementById('leads-list');
-                const leads = JSON.parse(localStorage.getItem('str_leads') || "[]");
+                const leads = JSON.parse(localStorage.getItem('sap_leads') || "[]");
                 if(!list) return;
                 list.innerHTML = '';
                 leads.forEach(lead => {
@@ -645,7 +645,7 @@
             }
 
             document.getElementById('download-leads').addEventListener('click', () => {
-                const leads = JSON.parse(localStorage.getItem('str_leads') || "[]");
+                const leads = JSON.parse(localStorage.getItem('sap_leads') || "[]");
                 if(!leads.length) return alert('NO HAY LEADS PARA EXPORTAR');
                 
                 let csv = "Fecha,Nombre,Email,WhatsApp,Industria,Interes\n";
@@ -657,12 +657,12 @@
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `leads_strategic_${new Date().toISOString().slice(0,10)}.csv`;
+                a.download = `leads_sapiens_${new Date().toISOString().slice(0,10)}.csv`;
                 a.click();
             });
 
             document.getElementById('logout-btn').addEventListener('click', () => {
-                sessionStorage.removeItem('str_session');
+                sessionStorage.removeItem('sap_session');
                 location.reload();
             });
         });

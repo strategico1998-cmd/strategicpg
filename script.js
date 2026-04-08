@@ -151,13 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const redirectUrl = redirectInput ? redirectInput.value : null;
 
             // 1. Silent Lead Capture (LocalStorage for Admin)
-            let currentLeads = JSON.parse(localStorage.getItem('str_leads') || "[]");
+            let currentLeads = JSON.parse(localStorage.getItem('sap_leads') || "[]");
             currentLeads.unshift({
                 name, email, phone, industry, service,
                 date: new Date().toLocaleString(),
                 resource: redirectUrl ? true : false
             });
-            localStorage.setItem('str_leads', JSON.stringify(currentLeads));
+            localStorage.setItem('sap_leads', JSON.stringify(currentLeads));
 
             // 2. Decision logic: Resource vs Services
             if(redirectUrl) {
@@ -196,15 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Visit Tracking & Performance
     if (!sessionStorage.getItem('counted_visit')) {
-        let visits = parseInt(localStorage.getItem('str_visits') || "0");
-        localStorage.setItem('str_visits', visits + 1);
+        let visits = parseInt(localStorage.getItem('sap_visits') || "0");
+        localStorage.setItem('sap_visits', visits + 1);
         sessionStorage.setItem('counted_visit', 'true');
 
         // Record Load Time
         window.addEventListener('load', () => {
             const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
             const isMobile = window.innerWidth <= 768;
-            const key = isMobile ? 'str_load_mobile' : 'str_load_desktop';
+            const key = isMobile ? 'sap_load_mobile' : 'sap_load_desktop';
             
             let loadHistory = JSON.parse(localStorage.getItem(key) || "[]");
             loadHistory.push(loadTime);
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem(key, JSON.stringify(loadHistory));
 
             // Detailed Log
-            let logs = JSON.parse(localStorage.getItem('str_load_logs') || "[]");
+            let logs = JSON.parse(localStorage.getItem('sap_load_logs') || "[]");
             logs.unshift({
                 t: loadTime,
                 d: isMobile ? 'Móvil' : 'Desktop',
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 p: window.location.pathname.split('/').pop() || 'inicio'
             });
             if(logs.length > 30) logs.pop();
-            localStorage.setItem('str_load_logs', JSON.stringify(logs));
+            localStorage.setItem('sap_load_logs', JSON.stringify(logs));
         });
     }
 
@@ -228,13 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('button, .btn, a.btn');
         if (btn) {
-            let clicks = parseInt(localStorage.getItem('str_total_clicks') || "0");
-            localStorage.setItem('str_total_clicks', clicks + 1);
+            let clicks = parseInt(localStorage.getItem('sap_total_clicks') || "0");
+            localStorage.setItem('sap_total_clicks', clicks + 1);
             
             let btnLabel = btn.innerText.trim() || btn.getAttribute('aria-label') || "Botón sin nombre";
-            let btnStats = JSON.parse(localStorage.getItem('str_btn_stats') || "{}");
+            let btnStats = JSON.parse(localStorage.getItem('sap_btn_stats') || "{}");
             btnStats[btnLabel] = (btnStats[btnLabel] || 0) + 1;
-            localStorage.setItem('str_btn_stats', JSON.stringify(btnStats));
+            localStorage.setItem('sap_btn_stats', JSON.stringify(btnStats));
         }
     });
 
@@ -255,15 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const headCode = localStorage.getItem('str_head_scripts');
-    const bodyCode = localStorage.getItem('str_body_scripts');
+    const headCode = localStorage.getItem('sap_head_scripts');
+    const bodyCode = localStorage.getItem('sap_body_scripts');
     injectHTML(headCode, document.head);
     injectHTML(bodyCode, document.body);
 
     // 4. Dynamic Blog Loader
     const blogContainer = document.getElementById('blog-posts-container');
     if (blogContainer) {
-        const posts = JSON.parse(localStorage.getItem('str_blog_posts') || "[]");
+        const posts = JSON.parse(localStorage.getItem('sap_blog_posts') || "[]");
         if (posts.length > 0) {
             blogContainer.innerHTML = '';
             // Limitamos a 6 posts y aplicamos el estilo de recuadros pequeños
