@@ -1,9 +1,9 @@
-# STRATEGIC - Performance Architecture 🛡️
+# SAPIENS - Performance Architecture 🛡️
 
 **Chief Conversion Officer 2026** - Ingeniería de Landing Pages de alto rendimiento.
 
 ## 🚀 Descripción
-Este repositorio contiene la arquitectura técnica de la landing page de **STRATEGIC**. Enfocada en la ingeniería de persuasión, Paid Media y optimización de conversión (CRO) para el mercado 2026.
+Este repositorio contiene la arquitectura técnica de la landing page de **SAPIENS**. Enfocada en la ingeniería de persuasión, Paid Media y optimización de conversión (CRO) para el mercado 2026.
 
 ### 🛠️ Nuevas Funcionalidades
 - **Calculadoras de Inversión Duales:** Estimación en tiempo real para campañas de *Leads/Citas* y *E-commerce/Ventas* con rangos desde $3M.
@@ -39,4 +39,4 @@ El proyecto está configurado para ser desplegado automáticamente en **Vercel**
 - **Robots.txt**: Managed visibility for search engines.
 
 ---
-**Powered by STRATEGIC - Chief Conversion Officer**
+**Powered by SAPIENS - Chief Conversion Officer**
