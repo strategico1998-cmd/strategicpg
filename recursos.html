@@ -1,12 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta name="robots" content="noindex, follow">
-    <meta http-equiv="refresh" content="0; url=/recursos/">
-    <link rel="canonical" href="https://strategico.top/recursos/">
-    <script>window.location.href = "/recursos/";</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recursos técnicos y herramientas premium para optimizar tus campañas de marketing y publicidad. SAPIENS Performance Architecture.">
+    <title>Recursos Técnicos | SAPIENS Performance Architecture</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --accent: #FF0000;
+            --bg: #000000;
+            --card-bg: rgba(255,255,255,0.03);
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        body { background: var(--bg); color: #fff; font-family: var(--font-body); }
+        .grid { display: grid; gap: 2rem; }
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+        .resource-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            background: rgba(255,0,0,0.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,0,0,0.1);
+        }
+        .resource-card:hover h3 { color: var(--accent); }
+        .resource-card i { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent); opacity: 0.8; }
+        .resource-card h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem; text-transform: uppercase; transition: color 0.3s; }
+        .resource-card p { opacity: 0.6; font-size: 0.95rem; line-height: 1.6; }
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255,0,0,0.1);
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .header-section { padding: 8rem 0 4rem; text-align: left; }
+        .accent-text { color: var(--accent); }
+    </style>
 </head>
 <body>
-    <p>Redirigiendo a la versión optimizada... Si no carga, <a href="/recursos/">haz clic aquí</a>.</p>
+
+    <nav style="padding: 2rem 0; position: absolute; width: 100%; top: 0; z-index: 100;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; text-decoration: none; color: #fff;">SAPIENS<span class="accent-text">.</span></a>
+            <a href="index.html" style="text-decoration: none; color: #fff; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <section class="header-section">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; margin-bottom: 2rem;">RECURSOS <br><span class="accent-text">TÉCNICOS.</span></h1>
+            <p style="max-width: 600px; font-size: 1.25rem; opacity: 0.8; line-height: 1.5;">Herramientas diseñadas para darte claridad sobre tus números y optimizar tu toma de decisiones estratégicas.</p>
+        </div>
+    </section>
+
+    <div class="container" style="padding-bottom: 10rem;">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            
+            <!-- RECURSO 1 -->
+            <a href="#" class="resource-card">
+                <span class="badge">Performance</span>
+                <i class="fas fa-calculator"></i>
+                <h3>Calculadora de Rendimiento</h3>
+                <p>Proyecta tu retorno de inversión (ROI) y costo de adquisición (CAC) antes de lanzar tus campañas.</p>
+            </a>
+
+            <!-- RECURSO 2 -->
+            <a href="#" class="resource-card">
+                <span class="badge">Reporting</span>
+                <i class="fas fa-chart-line"></i>
+                <h3>Plantilla KPI Campañas</h3>
+                <p>El dashboard exacto que usamos para medir el éxito de nuestras cuentas premium en tiempo real.</p>
+            </a>
+
+            <!-- RECURSO 3 -->
+            <a href="#" class="resource-card">
+                <span class="badge">SEO</span>
+                <i class="fas fa-search"></i>
+                <h3>Auditoría SEO Express</h3>
+                <p>Descubre los 10 puntos críticos que están frenando tu posicionamiento orgánico en Google.</p>
+            </a>
+
+            <!-- RECURSO 4 -->
+            <a href="#" class="resource-card">
+                <span class="badge">Estrategia</span>
+                <i class="fas fa-rocket"></i>
+                <h3>Guía de Escalado Paid Media</h3>
+                <p>Nuestra metodología probada para pasar de inversiones modestas a presupuestos de alta escala.</p>
+            </a>
+
+            <!-- RECURSO 5 -->
+            <a href="#" class="resource-card">
+                <span class="badge">Conversión</span>
+                <i class="fas fa-bullseye"></i>
+                <h3>Checklist de Conversión (CRO)</h3>
+                <p>Optimiza tu landing page con los 25 elementos psicológicos que disparan la tasa de contacto.</p>
+            </a>
+
+        </div>
+    </div>
+
+    <footer style="padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="container">
+            <p style="opacity: 0.5; font-size: 0.9rem;">&copy; 2024 SAPIENS Performance Architecture. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
