@@ -336,16 +336,23 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     .guarantee-inline { flex-direction: column !important; align-items: center !important; text-align: center !important; }
     .guarantee-icon-wrap { position: static !important; transform: none !important; margin: 0 auto 1.5rem !important; width: 120px !important; height: 120px !important; }
     .guarantee-content { max-width: 100% !important; text-align: center !important; }
-    .guarantee-content h2 { text-align: center !important; }
-    .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; justify-content: center; }
+    .guarantee-content h2 { text-align: center !important; font-size: 1.8rem !important; line-height: 1.2 !important; }
+    .guarantee-content p { text-align: center !important; }
+    .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; justify-content: center !important; width: 100% !important; }
+    .guarantee-checks span { width: 100%; display: block; text-align: center; }
+
+    /* Fix Pauta Info spacing on Mobile (Image 2) */
+    .plan-note { text-align: center !important; }
 
     /* Sapiens Architecture Center on Mobile */
     .architecture-block { text-align: center !important; }
     .architecture-block h2, .architecture-block h3 { text-align: center !important; }
-    .architecture-list { display: flex; flex-direction: column; align-items: center; text-align: left; }
+    .architecture-list { display: flex; flex-direction: column; align-items: center; text-align: center !important; width: 100%; }
+    .architecture-list li { margin: 0 auto 1.2rem !important; padding-left: 0; justify-content: center !important; text-align: center !important; width: 100%; }
+    .architecture-list li span { display: none; } /* Hide checkmark if centering text purely */
 
     /* Fix B2B/Ecommerce Grid buttons sizes on Mobile */
-    .mobile-small-btn { padding: 1.5rem 1rem !important; font-size: 0.85rem !important; }
+    .mobile-small-btn { padding: 1.2rem 0.5rem !important; font-size: 0.75rem !important; max-width: 250px; margin: 0 auto; }
 
     /* Overflow fix */
     * { max-width: 100%; }
@@ -357,9 +364,9 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 
 @media (max-width: 480px) {
     .container { padding: 0 0.8rem; }
-    h1 { font-size: 1.4rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    h3 { font-size: 1rem !important; }
+    h1 { font-size: 1rem !important; letter-spacing: 2px !important; }
+    h2 { font-size: 2.2rem !important; letter-spacing: -1px !important; line-height: 1.1 !important; }
+    h3 { font-size: 1.1rem !important; }
     
     .btn { font-size: 0.65rem; padding: 0.6rem 1rem; border-radius: 6px; letter-spacing: 0.5px; }
     .btn-large { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; font-size: 0.75rem; }
