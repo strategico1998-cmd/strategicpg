@@ -110,14 +110,17 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 /* Buttons */
 .btn {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 0.8rem 2rem; background: var(--accent); color: white;
+    padding: 0.9rem 2.2rem; background: var(--accent); color: white;
     text-decoration: none; font-weight: 800; font-family: var(--font-heading);
     font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    border-radius: 6px;
     transition: var(--transition); border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255,0,0,0.25);
+    white-space: nowrap;
+    max-width: 100%;
 }
-.btn:hover { transform: translateY(-3px); background: #fff; color: #000; }
-.btn-large { padding: 1.2rem 3rem; font-size: 1rem; }
+.btn:hover { transform: translateY(-3px); background: #fff; color: #000; box-shadow: 0 8px 30px rgba(255,255,255,0.15); }
+.btn-large { padding: 1.2rem 3rem; font-size: 1rem; border-radius: 8px; }
 
 /* Cards & Grid */
 .section { padding: 5rem 0; }
@@ -277,11 +280,11 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 }
 
 @media (max-width: 968px) {
-    .container { padding: 0 1.2rem; }
+    .container { padding: 0 1rem; }
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
     .hero-img-container { order: -1; }
     .hero-img-container img { max-height: 250px; }
-    .hero-desc { font-size: 0.9rem; margin: 0 auto 2rem; }
+    .hero-desc { font-size: 0.9rem; margin: 0 auto 2rem; text-align: center; }
     
     .menu-toggle { display: flex; }
     .nav-links {
@@ -304,7 +307,7 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     .nav-links.active { right: 0; }
     .nav-links a { font-size: 1.2rem; }
 
-    .resource-row { grid-template-columns: 1fr; text-align: center; gap: 1rem; padding: 2rem; }
+    .resource-row { grid-template-columns: 1fr; text-align: center; gap: 1rem; padding: 1.5rem; }
     .resource-row .btn { margin: 0 auto; width: 100%; }
     .resource-thumb { width: 80px; height: 80px; margin: 0 auto; }
     .section { padding: 3rem 0; }
@@ -312,16 +315,44 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     h1 { font-size: 1.8rem !important; }
     h2 { font-size: 1.8rem !important; }
 
+    /* CENTER all text blocks on mobile */
+    .hero-text { text-align: center !important; align-items: center !important; }
+    .hero-text h1, .hero-text h2, .hero-text p { text-align: center !important; }
+    .hero-text > div { width: 100% !important; text-align: center !important; }
+    .btn-large { max-width: 100%; min-width: 0; }
+
     /* Fix Blog and Grid on Mobile */
     .grid { grid-template-columns: 1fr !important; }
     #blog-posts-container { grid-template-columns: 1fr !important; }
+
+    /* Testimonials slider: one card per view on mobile */
+    .testimonial-slide { grid-template-columns: 1fr !important; }
+    .testimonial-container { overflow: hidden; width: 100%; }
+
+    /* Guarantee section mobile fix */
+    .guarantee-inline { flex-direction: column !important; align-items: center !important; text-align: center !important; }
+    .guarantee-icon-wrap { position: static !important; transform: none !important; margin: 0 auto 1.5rem !important; width: 120px !important; height: 120px !important; }
+    .guarantee-content { max-width: 100% !important; }
+    .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; }
+
+    /* Overflow fix */
+    * { max-width: 100%; }
+    img { max-width: 100%; height: auto; }
+    .card { padding: 1.5rem 1rem; box-sizing: border-box; }
+    .contact-hero { padding: 2rem 1rem; border-radius: 16px; }
+    .contact-hero .grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 480px) {
-    h1 { font-size: 1.5rem !important; }
-    .btn-large { width: 100%; padding: 1rem; clip-path: none; border-radius: 8px; }
-    .card { padding: 1.5rem; }
-    .contact-hero { padding: 2rem 1rem; border-radius: 20px; }
+    .container { padding: 0 0.8rem; }
+    h1 { font-size: 1.4rem !important; }
+    h2 { font-size: 1.4rem !important; }
+    h3 { font-size: 1rem !important; }
+    .btn { font-size: 0.75rem; padding: 0.8rem 1.2rem; border-radius: 6px; }
+    .btn-large { width: 100%; padding: 1rem 1.2rem; border-radius: 8px; font-size: 0.85rem; }
+    .card { padding: 1.2rem 0.8rem; }
+    .contact-hero { padding: 1.5rem 0.8rem; border-radius: 12px; }
+    section[style] { padding-left: 0 !important; }
 }
 
 /* Admin Specific */

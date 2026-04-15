@@ -70,9 +70,8 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                        <button class="btn open-form" style="flex: 2;" data-service="Propulsor Orbital" data-msg="Hola SAPIENS, me interesa el Propulsor Orbital ($3M).">SOLICITAR PLAN</button>
-                        <a href="/servicios/pauta-digital-propulsor/" class="btn" style="flex: 1; background: transparent; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">SABER MÁS</a>
+                    <div style="margin-top: 2rem;">
+                        <button class="btn open-form" style="width: 100%;" data-service="Propulsor Orbital" data-msg="Hola SAPIENS, me interesa el Propulsor Orbital ($3M).">SOLICITAR PLAN</button>
                     </div>
                 </article>
 
@@ -98,9 +97,8 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                        <button class="btn open-form" style="flex: 2;" data-service="Órbita de Crecimiento" data-msg="Hola SAPIENS, me interesa la Órbita de Crecimiento ($5.3M).">SOLICITAR CRECIMIENTO</button>
-                        <a href="/servicios/performance-marketing-orbita/" class="btn" style="flex: 1; background: transparent; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">SABER MÁS</a>
+                    <div style="margin-top: 2rem;">
+                        <button class="btn open-form" style="width: 100%;" data-service="Órbita de Crecimiento" data-msg="Hola SAPIENS, me interesa la Órbita de Crecimiento ($5.3M).">SOLICITAR CRECIMIENTO</button>
                     </div>
                 </article>
 
@@ -126,9 +124,8 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                        <button class="btn open-form" style="flex: 2;" data-service="Expansión Galáctica" data-msg="Hola SAPIENS, quiero escalar con la Expansión Galáctica ($12M).">ESCALAR AHORA</button>
-                        <a href="/servicios/arquitectura-full-funnel/" class="btn" style="flex: 1; background: transparent; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">SABER MÁS</a>
+                    <div style="margin-top: 2rem;">
+                        <button class="btn open-form" style="width: 100%;" data-service="Expansión Galáctica" data-msg="Hola SAPIENS, quiero escalar con la Expansión Galáctica ($12M).">ESCALAR AHORA</button>
                     </div>
                 </article>
 
@@ -181,27 +178,29 @@
             </div>
 
             <!-- NUEVA SECCIÓN: GARANTÍA (IMAGEN 1) -->
-            <div class="reveal" style="margin-top: 4rem; background: linear-gradient(145deg, rgba(255,0,0,0.05) 0%, rgba(0,0,0,1) 100%); border: 1px solid var(--glass-border); border-radius: 30px; padding: 4rem; position: relative; overflow: hidden;">
-                <div style="max-width: 600px; position: relative; z-index: 2;">
-                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 900; letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase;">Sin letra pequeña</p>
-                    <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 2rem; font-family: var(--font-heading);">TU INVERSIÓN ESTÁ <br><span class="accent-text">100% PROTEGIDA.</span></h2>
-                    <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.7; margin-bottom: 3rem;">
-                        Trabajamos con garantía de devolución total. Si no quedas satisfecho con el trabajo entregado, te devolvemos el <strong>100% de tu dinero</strong>. Sin preguntas, sin burocracia. Así llevamos 10 años.
-                    </p>
-                    <div style="display: flex; gap: 2rem; margin-bottom: 3rem; font-size: 0.9rem; font-weight: 600;">
-                        <span style="color: var(--accent);">✓ Sin contratos largos</span>
-                        <span style="color: var(--accent);">✓ Pago 50% / 50%</span>
-                        <span style="color: var(--accent);">✓ Devolución inmediata</span>
+            <div class="reveal" style="margin-top: 4rem; background: linear-gradient(145deg, rgba(255,0,0,0.05) 0%, rgba(0,0,0,1) 100%); border: 1px solid var(--glass-border); border-radius: 30px; padding: 4rem; overflow: hidden;">
+                <!-- Horizontal layout: text left, icon right -->
+                <div class="guarantee-inline" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+                    <div class="guarantee-content" style="flex: 1; min-width: 280px;">
+                        <p style="color: var(--accent); font-size: 0.8rem; font-weight: 900; letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase;">Sin letra pequeña</p>
+                        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; margin-bottom: 2rem; font-family: var(--font-heading);">TU INVERSIÓN ESTÁ <br><span class="accent-text">100% PROTEGIDA.</span></h2>
+                        <p style="font-size: 1.05rem; line-height: 1.6; opacity: 0.7; margin-bottom: 2rem;">
+                            Trabajamos con garantía de devolución total. Si no quedas satisfecho con el trabajo entregado, te devolvemos el <strong>100% de tu dinero</strong>. Sin preguntas, sin burocracia. Así llevamos 10 años.
+                        </p>
+                        <div class="guarantee-checks" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; font-size: 0.9rem; font-weight: 600;">
+                            <span style="color: var(--accent);">✓ Sin contratos largos</span>
+                            <span style="color: var(--accent);">✓ Pago 50% / 50%</span>
+                            <span style="color: var(--accent);">✓ Devolución inmediata</span>
+                        </div>
+                        <button class="btn btn-large open-form" data-service="Garantía: Inicio" data-msg="Hola SAPIENS, quiero empezar con el respaldo de la garantía 100%.">EMPEZAR CON GARANTÍA →</button>
                     </div>
-                    <button class="btn btn-large open-form" data-service="Garantía: Inicio" data-msg="Hola SAPIENS, quiero empezar con el respaldo de la garantía 100%.">EMPEZAR CON GARANTÍA →</button>
-                </div>
-                <!-- Sello de garantía estilo circular -->
-                <div style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 250px; height: 250px; border: 1px solid rgba(255,0,0,0.2); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                    <div style="font-size: 4rem; margin-bottom: 0.5rem;">🛡️</div>
-                    <div style="font-size: 1.5rem; font-weight: 900; color: var(--accent);">100%</div>
-                    <div style="font-size: 0.7rem; font-weight: 900; letter-spacing: 2px;">GARANTIZADO</div>
-                    <!-- Círculo animado (puntos/estética) -->
-                    <div style="position: absolute; width: 110%; height: 110%; border: 1px dashed rgba(255,0,0,0.1); border-radius: 50%; animation: spin 20s linear infinite;"></div>
+                    <!-- Sello de garantía estilo circular -->
+                    <div class="guarantee-icon-wrap" style="flex-shrink: 0; width: 200px; height: 200px; border: 1px solid rgba(255,0,0,0.25); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative;">
+                        <div style="font-size: 3.5rem; margin-bottom: 0.4rem;">🛡️</div>
+                        <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent);">100%</div>
+                        <div style="font-size: 0.65rem; font-weight: 900; letter-spacing: 2px;">GARANTIZADO</div>
+                        <div style="position: absolute; width: 112%; height: 112%; border: 1px dashed rgba(255,0,0,0.12); border-radius: 50%; animation: spin 20s linear infinite;"></div>
+                    </div>
                 </div>
             </div>
 

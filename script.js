@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Carousel Logic (Testimonials) ---
+    // --- Carousel Logic (Testimonials bottom section) ---
     const track = document.getElementById('testimonial-track');
     if (track) {
         let index = 0;
@@ -127,8 +127,52 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(() => {
             index = (index + 1) % slideCount;
             track.style.transform = `translateX(-${index * 100}%)`;
-        }, 5000); // 5 seconds for slower, premium transition
+        }, 5000);
     }
+
+    // --- Mobile Testimonials Slider (section #testimonios-detallados) ---
+    function initMobileTestimonials() {
+        const desktopGrid = document.querySelector('.testimonials-desktop');
+        const mobileSlider = document.querySelector('.testimonials-mobile-slider');
+        const mobileTrack = document.getElementById('testimonials-mobile-track');
+        const dots = document.querySelectorAll('.t-dot');
+
+        if (!desktopGrid || !mobileSlider || !mobileTrack) return;
+
+        const isMobile = () => window.innerWidth <= 968;
+
+        function applyView() {
+            if (isMobile()) {
+                desktopGrid.style.display = 'none';
+                mobileSlider.style.display = 'block';
+            } else {
+                desktopGrid.style.display = '';
+                mobileSlider.style.display = 'none';
+            }
+        }
+
+        applyView();
+        window.addEventListener('resize', applyView);
+
+        // Auto-scroll
+        let mIdx = 0;
+        const items = mobileTrack.querySelectorAll('.testimonial-mobile-item');
+        const total = items.length;
+
+        function goTo(n) {
+            mIdx = n;
+            mobileTrack.style.transform = `translateX(-${mIdx * 100}%)`;
+            dots.forEach((d, i) => {
+                d.style.background = i === mIdx ? 'var(--accent)' : 'rgba(255,255,255,0.2)';
+            });
+        }
+
+        setInterval(() => {
+            goTo((mIdx + 1) % total);
+        }, 3500);
+    }
+
+    initMobileTestimonials();
 
     // --- Form Submission ---
     const forms = document.querySelectorAll('#sapiens-form');
