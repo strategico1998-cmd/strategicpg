@@ -110,9 +110,9 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 /* Buttons */
 .btn {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 0.9rem 2.2rem; background: var(--accent); color: white;
+    padding: 0.7rem 1.8rem; background: var(--accent); color: white;
     text-decoration: none; font-weight: 800; font-family: var(--font-heading);
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
     border-radius: 6px;
     transition: var(--transition); border: none; cursor: pointer;
     box-shadow: 0 4px 20px rgba(255,0,0,0.25);
@@ -120,7 +120,7 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     max-width: 100%;
 }
 .btn:hover { transform: translateY(-3px); background: #fff; color: #000; box-shadow: 0 8px 30px rgba(255,255,255,0.15); }
-.btn-large { padding: 1.2rem 3rem; font-size: 1rem; border-radius: 8px; }
+.btn-large { padding: 1rem 2.2rem; font-size: 0.85rem; border-radius: 8px; }
 
 /* Cards & Grid */
 .section { padding: 5rem 0; }
@@ -241,7 +241,10 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 .service-details li::before { content: '>'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
 
 .plan-price { font-size: 1.2rem; color: #fff; font-weight: 800; margin: 1rem 0; font-family: var(--font-heading); }
-.plan-note { font-size: 0.7rem; color: var(--text-dim); margin-bottom: 1.5rem; }
+.plan-note { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 1.5rem; text-align: justify; line-height: 1.6; }
+
+/* Custom Justified Paragraphs */
+.text-justify { text-align: justify; text-justify: inter-word; }
 
 /* Animations & SEO */
 .reveal { 
@@ -332,8 +335,17 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     /* Guarantee section mobile fix */
     .guarantee-inline { flex-direction: column !important; align-items: center !important; text-align: center !important; }
     .guarantee-icon-wrap { position: static !important; transform: none !important; margin: 0 auto 1.5rem !important; width: 120px !important; height: 120px !important; }
-    .guarantee-content { max-width: 100% !important; }
-    .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; }
+    .guarantee-content { max-width: 100% !important; text-align: center !important; }
+    .guarantee-content h2 { text-align: center !important; }
+    .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; justify-content: center; }
+
+    /* Sapiens Architecture Center on Mobile */
+    .architecture-block { text-align: center !important; }
+    .architecture-block h2, .architecture-block h3 { text-align: center !important; }
+    .architecture-list { display: flex; flex-direction: column; align-items: center; text-align: left; }
+
+    /* Fix B2B/Ecommerce Grid buttons sizes on Mobile */
+    .mobile-small-btn { padding: 1.5rem 1rem !important; font-size: 0.85rem !important; }
 
     /* Overflow fix */
     * { max-width: 100%; }
@@ -348,8 +360,9 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     h1 { font-size: 1.4rem !important; }
     h2 { font-size: 1.4rem !important; }
     h3 { font-size: 1rem !important; }
-    .btn { font-size: 0.75rem; padding: 0.8rem 1.2rem; border-radius: 6px; }
-    .btn-large { width: 100%; padding: 1rem 1.2rem; border-radius: 8px; font-size: 0.85rem; }
+    
+    .btn { font-size: 0.65rem; padding: 0.6rem 1rem; border-radius: 6px; letter-spacing: 0.5px; }
+    .btn-large { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; font-size: 0.75rem; }
     .card { padding: 1.2rem 0.8rem; }
     .contact-hero { padding: 1.5rem 0.8rem; border-radius: 12px; }
     section[style] { padding-left: 0 !important; }
