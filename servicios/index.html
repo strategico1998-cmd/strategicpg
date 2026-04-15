@@ -43,89 +43,96 @@
 
     <main class="section" style="padding-top: 8rem;">
         <div class="container">
-            <h1 class="reveal-left">INGENIERÍA DE <span class="accent-text">CRECIMIENTO.</span></h1>
-            <p class="reveal-left" style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">Desarrollamos estrategias integradas con SEO, analítica y conexión de canales para optimizar Facebook, TikTok y Google Ads.</p>
-            
-            <div class="grid">
-                
+            <h1 class="reveal-left" style="text-align:center;">INGENIERÍA DE <span class="accent-text">CRECIMIENTO.</span></h1>
+            <p class="reveal-left" style="max-width: 700px; margin: 0 auto 3rem; text-align: center; opacity:0.7; font-size:0.95rem;">Desarrollamos estrategias integradas con SEO, analítica y conexión de canales para optimizar Facebook, TikTok y Google Ads.</p>
+
+            <!-- SERVICES GRID: 3 cards lado a lado en desktop, 1 columna en mobile -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto;">
+
                 <!-- PROPULSOR ORBITAL -->
-                <article class="card reveal" style="transition-delay: 0.1s;">
-                    <img src="/assets/ape_services.png" alt="Propulsor Orbital" class="card-img" loading="lazy">
-                    <h3>PROPULSOR ORBITAL</h3>
-                    <p class="plan-price">$3.000.000 COP / mes</p>
-                    <p class="plan-note" style="text-align: center !important;">Objetivo: validación técnica y creativa. <br>Resultado: audiencia ganadora y base sólida para escalar.</p>
-                    <div class="accordion">
+                <article class="reveal" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; transition: var(--transition); transition-delay: 0.1s;">
+                    <img src="/assets/ape_services.png" alt="Propulsor Orbital" loading="lazy" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--glass-border); margin-bottom:1rem;">
+                    <h3 style="font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">PROPULSOR ORBITAL</h3>
+                    <p style="font-size:1rem; color:#fff; font-weight:800; text-align:center; margin:0.4rem 0; font-family:var(--font-heading);">$3.000.000 COP / mes</p>
+                    <p style="font-size:0.75rem; color:var(--text-dim); text-align:center; line-height:1.5; margin-bottom:1rem;">Validación técnica y creativa. Audiencia ganadora y base sólida para escalar.</p>
+                    <div class="accordion" style="flex:1;">
                         <div class="accordion-item">
                             <button class="accordion-header">Incluye:</button>
                             <div class="accordion-content">
-                                <ul class="service-details" style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">
+                                <ul class="service-details">
                                     <li>1 campaña principal</li>
                                     <li>2 a 3 conjuntos de anuncios</li>
                                     <li>3 a 4 anuncios activos</li>
                                     <li>Test inicial de creativos</li>
-                                    <li>Optimización 2 a 3 veces por semana</li>
-                                    <li>Ajustes básicos de segmentación y presupuesto</li>
+                                    <li>Optimización 2-3 veces/semana</li>
+                                    <li>Ajustes de segmentación</li>
                                     <li>Reporte mensual</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 2rem;">
-                        <button class="btn open-form" style="width: 100%;" data-service="Propulsor Orbital" data-msg="Hola SAPIENS, me interesa el Propulsor Orbital ($3M).">SOLICITAR PLAN</button>
+                    <div style="margin-top:1rem;">
+                        <button class="btn open-form" style="width:100%; font-size:0.65rem;" data-service="Propulsor Orbital" data-msg="Hola SAPIENS, me interesa el Propulsor Orbital ($3M).">SOLICITAR PLAN</button>
                     </div>
                 </article>
 
-                <!-- ÓRBITA DE CRECIMIENTO -->
-                <article class="card reveal" style="border: 2px solid var(--accent); background: rgba(255,0,0,0.03); transition-delay: 0.2s;">
-                    <img src="/assets/ape_hero.png" alt="Órbita de Crecimiento" class="card-img" loading="lazy">
-                    <h3>ÓRBITA DE CRECIMIENTO</h3>
-                    <p class="plan-price">$5.300.000 COP / mes</p>
-                    <p class="plan-note" style="text-align: center !important;">Objetivo: estabilizar campañas y escalar resultados. <br>Resultado: flujo constante de leads o ventas.</p>
-                    <div class="accordion">
+                <!-- ÓRBITA DE CRECIMIENTO (destacado) -->
+                <article class="reveal" style="background: rgba(255,0,0,0.04); border: 2px solid var(--accent); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; transition: var(--transition); transition-delay: 0.2s; position:relative;">
+                    <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--accent); color:#fff; font-family:var(--font-heading); font-size:0.55rem; letter-spacing:2px; padding:4px 14px; border-radius:20px; white-space:nowrap;">MÁS POPULAR</div>
+                    <img src="/assets/ape_hero.png" alt="Órbita de Crecimiento" loading="lazy" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid rgba(255,0,0,0.3); margin-bottom:1rem;">
+                    <h3 style="font-size:0.9rem; margin-bottom:0.5rem; text-align:center; color:var(--accent);">ÓRBITA DE CRECIMIENTO</h3>
+                    <p style="font-size:1rem; color:#fff; font-weight:800; text-align:center; margin:0.4rem 0; font-family:var(--font-heading);">$5.300.000 COP / mes</p>
+                    <p style="font-size:0.75rem; color:var(--text-dim); text-align:center; line-height:1.5; margin-bottom:1rem;">Estabilizar campañas y escalar resultados. Flujo constante de leads o ventas.</p>
+                    <div class="accordion" style="flex:1;">
                         <div class="accordion-item">
                             <button class="accordion-header">Incluye:</button>
                             <div class="accordion-content">
-                                <ul class="service-details" style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">
-                                    <li>2 a 4 campañas (prospección + remarketing)</li>
+                                <ul class="service-details">
+                                    <li>2-4 campañas (prospección + remarketing)</li>
                                     <li>5 a 8 conjuntos de anuncios</li>
-                                    <li>Test continuo de anuncios y audiencias</li>
-                                    <li>Optimización constante (cada 48 horas)</li>
-                                    <li>Escalamiento progresivo de campañas ganadoras</li>
-                                    <li>Ajustes de presupuesto según rendimiento</li>
+                                    <li>Test continuo de anuncios</li>
+                                    <li>Optimización cada 48 horas</li>
+                                    <li>Escalamiento de campañas ganadoras</li>
+                                    <li>Ajustes de presupuesto</li>
                                     <li>Reporte quincenal o mensual</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top:1rem;">
+                        <button class="btn open-form" style="width:100%; font-size:0.65rem;" data-service="Órbita de Crecimiento" data-msg="Hola SAPIENS, me interesa Órbita de Crecimiento ($5.3M).">SOLICITAR PLAN</button>
                     </div>
                 </article>
 
                 <!-- EXPANSIÓN GALÁCTICA -->
-                <article class="card reveal" style="transition-delay: 0.3s;">
-                    <img src="/assets/ape_contact.png" alt="Expansión Galáctica" class="card-img" loading="lazy">
-                    <h3>EXPANSIÓN GALÁCTICA</h3>
-                    <p class="plan-price">$12.000.000 COP / mes</p>
-                    <p class="plan-note" style="text-align: center !important;">Objetivo: escalar agresivamente campañas ganadoras. <br>Resultado: alto volumen de ventas o leads con sistema replicable.</p>
-                    <div class="accordion">
+                <article class="reveal" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; transition: var(--transition); transition-delay: 0.3s;">
+                    <img src="/assets/ape_contact.png" alt="Expansión Galáctica" loading="lazy" style="width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid var(--glass-border); margin-bottom:1rem;">
+                    <h3 style="font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">EXPANSIÓN GALÁCTICA</h3>
+                    <p style="font-size:1rem; color:#fff; font-weight:800; text-align:center; margin:0.4rem 0; font-family:var(--font-heading);">$12.000.000 COP / mes</p>
+                    <p style="font-size:0.75rem; color:var(--text-dim); text-align:center; line-height:1.5; margin-bottom:1rem;">Escalar agresivamente campañas ganadoras. Alto volumen de ventas con sistema replicable.</p>
+                    <div class="accordion" style="flex:1;">
                         <div class="accordion-item">
                             <button class="accordion-header">Incluye:</button>
                             <div class="accordion-content">
-                                <ul class="service-details" style="font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">
-                                    <li>4 a 8 campañas activas (full funnel)</li>
+                                <ul class="service-details">
+                                    <li>4-8 campañas activas (full funnel)</li>
                                     <li>Segmentación avanzada + remarketing</li>
-                                    <li>Test constante de creativos, audiencias y estructuras</li>
+                                    <li>Test constante de creativos</li>
                                     <li>Optimización diaria</li>
                                     <li>Escalamiento vertical y horizontal</li>
-                                    <li>Redistribución estratégica del presupuesto</li>
+                                    <li>Redistribución estratégica</li>
                                     <li>Reporte semanal con métricas clave</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top:1rem;">
+                        <button class="btn open-form" style="width:100%; font-size:0.65rem;" data-service="Expansión Galáctica" data-msg="Hola SAPIENS, me interesa Expansión Galáctica ($12M).">SOLICITAR PLAN</button>
                     </div>
                 </article>
 
             </div>
+
 
             <!-- NUEVA SECCIÓN: BENEFICIOS (IMAGEN 2) -->
             <div class="reveal architecture-section" style="margin-top: 8rem; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 4rem; border-radius: 30px;">

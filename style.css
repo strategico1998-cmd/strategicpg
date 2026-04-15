@@ -133,6 +133,21 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 .service-details li { margin-bottom: 0.3rem; font-size: 0.8rem; color: var(--text-dim); }
 .service-details li::before { content: '>'; color: var(--accent); margin-right: 6px; font-weight: bold; }
 
+/* Services page cards hover */
+[style*="border-radius: 16px"]:hover { border-color: var(--accent) !important; transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+
+/* Responsive: services 3-col grid */
+@media (max-width: 1024px) {
+    div[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 640px) {
+    div[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* Forms */
 .form-group { margin-bottom: 1rem; text-align: left; }
 .form-group label { display: block; font-family: var(--font-heading); font-size: 0.6rem; color: var(--accent); margin-bottom: 0.3rem; text-transform: uppercase; }
