@@ -335,9 +335,11 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     /* Guarantee section mobile fix */
     .guarantee-inline { flex-direction: column !important; align-items: center !important; text-align: center !important; }
     .guarantee-icon-wrap { position: static !important; transform: none !important; margin: 0 auto 1.5rem !important; width: 120px !important; height: 120px !important; }
-    .guarantee-content { max-width: 100% !important; text-align: center !important; }
-    .guarantee-content h2 { text-align: center !important; font-size: 1.8rem !important; line-height: 1.2 !important; }
-    .guarantee-content p { text-align: center !important; }
+    .guarantee-content { text-align: center !important; }
+    .guarantee-inline { justify-content: center !important; }
+    .guarantee-icon-wrap { margin: 2rem auto !important; }
+    .service-details { text-align: center !important; list-style: none !important; }
+    .service-details li { display: inline-block; width: 100%; }
     .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; justify-content: center !important; width: 100% !important; }
     .guarantee-checks span { width: 100%; display: block; text-align: center; }
 
@@ -427,6 +429,17 @@ textarea#head-code-input::-webkit-scrollbar-thumb, textarea#body-code-input::-we
     margin-bottom: 2rem;
     letter-spacing: 1px;
     text-align: center;
+}
+
+.plan-note {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    opacity: 0.6;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .investment-value-small {
