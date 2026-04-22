@@ -124,7 +124,7 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 .card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem 2rem; backdrop-filter: blur(10px); transition: var(--transition); text-align: center; }
 .card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.card-img { width: 100%; aspect-ratio: 1; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; border: 1px solid var(--glass-border); max-height: 250px; }
+.card-img { width: 100%; height: 260px; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; object-position: top center; border: 1px solid var(--glass-border); display: block; background: #0a0a0a; }
 .service-details { list-style: none; margin: 1rem 0; text-align: left; }
 .service-details li { margin-bottom: 0.3rem; font-size: 0.8rem; color: var(--text-dim); }
 .service-details li::before { content: '>'; color: var(--accent); margin-right: 6px; font-weight: bold; }

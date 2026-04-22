@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const service = form.querySelector('#form-service').value;
             const baseMsg = form.querySelector('#form-base-msg').value;
 
-            const finalMsg = `${baseMsg}\n\n*MIS DATOS TÉCNICOS:*\n- Nombre: ${name}\n- Email: ${email}\n- WhatsApp: ${phone}\n- Industria: ${industry}\n- Plan/Servicio: ${service}`;
+            const finalMsg = `${baseMsg}\n\n*DATOS DEL LEAD:*\n- Nombre: ${name}\n- Email: ${email}\n- WhatsApp: ${phone}\n- Recurso: ${service}`;
             const encodedMessage = encodeURIComponent(finalMsg);
             
             const redirectInput = form.querySelector('#form-redirect');
@@ -161,13 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. Decision logic: Resource vs Services
             if(redirectUrl) {
-                // If it's a resource (Download), redirect directly
-                // We still trigger a background window.open for WhatsApp if the user wants it,
-                // but per user request "sin que se den cuenta", we might skip it or do it differently.
-                // The user said: "no ir a un botón a WhatsApp sino descargar directamente"
-                // and "sin que la persona se dé cuenta enviarlos a mi whatsapp".
-                // Since true silent WhatsApp isn't possible, we prioritize the download.
-                window.location.href = redirectUrl;
+                // Send lead data to owner via WhatsApp (background tab)
+                window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
+                // Then redirect user to the Drive resource
+                setTimeout(() => {
+                    window.open(redirectUrl, '_blank');
+                }, 300);
             } else {
                 // If its a service request, open WhatsApp as usual
                 window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
