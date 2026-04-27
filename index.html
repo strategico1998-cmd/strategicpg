@@ -81,7 +81,7 @@
                     
                     <div class="reveal-left" style="max-width: 650px;">
                         <p class="hero-desc" style="font-weight: 700; color: #fff; margin-bottom: 1.5rem; font-size: 1.2rem; line-height: 1.4; opacity: 0.95;">Agencia de Marketing Digital en Bogotá — SEO, publicidad digital, redes sociales, desarrollo web y más. Agenda una asesoría sin costo.</p>
-                        <p class="hero-desc" style="font-size: 1rem; line-height: 1.7; opacity: 0.7; margin-bottom: 2.5rem;">Deja atrás el estrés de las campañas sueltas y la improvisación. Como agencia especializada en marketing digital y publicidad en Colombia, nos encargamos de ensamblar toda la arquitectura técnica, estrategias de posicionamiento SEO y creatividad que tu marca necesita para crecer de forma predecible en Google y las redes sociales.</p>
+                        <p class="hero-desc" style="font-size: 0.82rem; line-height: 1.7; opacity: 0.6; margin-bottom: 2.5rem;">Deja atrás el estrés de las campañas sueltas y la improvisación. Como agencia especializada en marketing digital y publicidad en Colombia, nos encargamos de ensamblar toda la arquitectura técnica, estrategias de posicionamiento SEO y creatividad que tu marca necesita para crecer de forma predecible en Google y las redes sociales.</p>
                     </div>
 
                     <div class="reveal-left">
@@ -283,21 +283,40 @@
                 <h3 class="reveal" style="margin-bottom: 3rem; font-size: clamp(2.5rem, 6vw, 4.5rem); font-family: var(--font-heading); text-transform: uppercase; line-height: 1; font-weight: 900; letter-spacing: -1px;">RECURSOS <span class="accent-text" style="color: var(--accent);">ELITE.</span></h3>
                 <div class="resource-list">
                     <article class="resource-row reveal-left">
-                        <img src="./assets/ape_resources.png" alt="Perf Calc" class="resource-thumb" loading="lazy">
+                        <img src="./assets/ape_resources.png" alt="Calculadora Punto de Equilibrio" class="resource-thumb" loading="lazy">
                         <div>
-                            <h3>Calculadora de Rendimiento por Producto</h3>
-                            <p>Optimiza tus márgenes y conoce la rentabilidad real de cada artículo.</p>
+                            <h3>Calculadora de Punto de Equilibrio</h3>
+                            <p>Identifica el volumen de ventas exacto para cubrir tus costos y generar utilidad real.</p>
                         </div>
-                        <button class="btn open-form" data-service="Recurso: Calculadora Rendimiento" data-msg="Hola SAPIENS, solicito la Calculadora de Rendimiento por Producto." data-link="/recursos/calculadora-rentabilidad-ecommerce/">ACCEDER</button>
+                        <button class="btn open-resource-modal" data-service="Recurso: Calculadora Punto de Equilibrio" data-link="https://drive.google.com/file/d/1HNDM6onH2DDAsKMcbIvj2tW3tta6rXac/view?usp=sharing">DESCARGAR</button>
                     </article>
                     <article class="resource-row reveal-right">
-                        <img src="./assets/ape_resources.png" alt="Campaign Tab" class="resource-thumb" loading="lazy">
+                        <img src="./assets/ape_hero.png" alt="Calculadora E-commerce" class="resource-thumb" loading="lazy">
                         <div>
-                            <h3>Tabla de Registro Mensual de Campañas</h3>
-                            <p>Control riguroso de KPIS mensuales para escalar tus resultados.</p>
+                            <h3>Calculadora E-commerce</h3>
+                            <p>Ingeniería financiera para tiendas online: ROAS, CPA y proyecciones de escala.</p>
                         </div>
-                        <button class="btn open-form" data-service="Recurso: Registro Mensual" data-msg="Hola SAPIENS, solicito la Tabla de Registro Mensual de Campañas." data-link="https://drive.google.com/file/d/1nUP9dq-IeDczcrrcsEeLinlIRikSi8eJ/view?usp=sharing">DESCARGAR</button>
+                        <button class="btn open-resource-modal" data-service="Recurso: Calculadora E-commerce" data-link="https://drive.google.com/file/d/1Pp2uyzwvubTtRAduM8YPcUSUeJOCMh2V/view?usp=sharing">DESCARGAR</button>
                     </article>
+                    <article class="resource-row reveal-left">
+                        <img src="./assets/ape_services.png" alt="Calculadora por Empleado" class="resource-thumb" loading="lazy">
+                        <div>
+                            <h3>Calculadora por Empleado</h3>
+                            <p>Conoce el costo real de cada miembro de tu equipo y optimiza tu nómina con datos.</p>
+                        </div>
+                        <button class="btn open-resource-modal" data-service="Recurso: Calculadora por Empleado" data-link="https://drive.google.com/file/d/1T-5fk_d1QkHeV194lKEJiS0rYjFT1cAg/view?usp=sharing">DESCARGAR</button>
+                    </article>
+                    <article class="resource-row reveal-right">
+                        <img src="./assets/ape_contact.png" alt="Registro Rentabilidad Dropshipping" class="resource-thumb" loading="lazy">
+                        <div>
+                            <h3>Registro de Rentabilidad Dropshipping</h3>
+                            <p>Controla márgenes, proveedores y productos con el sistema de los operadores más rentables.</p>
+                        </div>
+                        <button class="btn open-resource-modal" data-service="Recurso: Registro Rentabilidad Dropshipping" data-link="https://drive.google.com/file/d/1683vXtg52rUmVOFUkQzwp9DZ_H8fLvXU/view?usp=sharing">DESCARGAR</button>
+                    </article>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="/recursos/" class="btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); font-size: 0.65rem;">VER TODOS LOS RECURSOS →</a>
                 </div>
             </div>
         </section>
@@ -424,7 +443,14 @@
         <!-- SECTION: CONVERSION + TESTIMONIALS -->
         <section class="section" id="final-conversion">
             <div class="container">
-                <div class="contact-hero reveal">
+                <div class="contact-hero reveal" style="position: relative;">
+                    <!-- Admin Backend Access -->
+                    <a href="/admin.html" class="admin-trigger" aria-label="Acceso al panel de administración" style="position:absolute; top:1.5rem; right:1.5rem; opacity:0.25; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.25'">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                     <h2>ESCALA AL <span class="accent-text">SIGUIENTE NIVEL.</span></h2>
                     <form id="sapiens-form" style="text-align: left; max-width: 600px; margin: 3rem auto 0; background: #0a0a0a; padding: 2.5rem; border-radius: 20px; border: 1px solid var(--glass-border);">
                         <input type="hidden" id="form-service" value="Lead Inicio Final">
@@ -548,7 +574,91 @@
         </div>
     </div>
 
+    <!-- MODAL DE DESCARGA DE RECURSO -->
+    <div id="resource-modal" class="modal" aria-hidden="true" role="dialog" style="display:none;">
+        <div class="modal-content" style="max-width: 420px;">
+            <span class="close-resource-modal" aria-label="Cerrar" style="position: absolute; right: 1.2rem; top: 0.8rem; font-size: 1.8rem; cursor: pointer; color: var(--text-dim);">&times;</span>
+            <h2 id="resource-modal-title" style="font-size: 1.1rem; margin-bottom: 0.5rem; letter-spacing: 1px;">DESCARGAR PLANTILLA</h2>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 1.5rem; line-height: 1.5;">Completa tus datos para recibir acceso inmediato al recurso.</p>
+            <form id="resource-download-form">
+                <input type="hidden" id="resource-service-hidden">
+                <input type="hidden" id="resource-link-hidden">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="resource-name" required placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono / WhatsApp</label>
+                    <input type="tel" id="resource-phone" required placeholder="573...">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="resource-email" required placeholder="correo@empresa.com">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem; padding: 1rem;">OBTENER RECURSO GRATIS →</button>
+            </form>
+            <div style="margin-top: 1.2rem; padding: 0.8rem; border: 1px dashed rgba(255,0,0,0.3); background: rgba(255,0,0,0.02); border-radius: 8px; text-align: center;">
+                <p style="font-size: 0.7rem; line-height: 1.5; opacity: 0.6;">🔒 Tus datos están seguros. Solo los usamos para enviarte recursos premium de valor.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+    // Resource Download Modal Logic (index page)
+    (function() {
+        const waOwnerNumber = "573228708724";
+        const rModal = document.getElementById('resource-modal');
+        const rCloseBtn = document.querySelector('.close-resource-modal');
+        const rForm = document.getElementById('resource-download-form');
+        const rModalTitle = document.getElementById('resource-modal-title');
+
+        document.querySelectorAll('.open-resource-modal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const service = btn.getAttribute('data-service') || 'Recurso';
+                const link = btn.getAttribute('data-link') || '#';
+                document.getElementById('resource-service-hidden').value = service;
+                document.getElementById('resource-link-hidden').value = link;
+                if (rModalTitle) rModalTitle.innerText = 'DESCARGAR: ' + service.replace('Recurso: ', '').toUpperCase();
+                if (rModal) { rModal.style.display = 'block'; rModal.setAttribute('aria-hidden', 'false'); }
+            });
+        });
+
+        if (rCloseBtn) {
+            rCloseBtn.addEventListener('click', () => {
+                if (rModal) { rModal.style.display = 'none'; rModal.setAttribute('aria-hidden', 'true'); }
+            });
+        }
+        window.addEventListener('click', (e) => {
+            if (e.target === rModal) { rModal.style.display = 'none'; rModal.setAttribute('aria-hidden', 'true'); }
+        });
+
+        if (rForm) {
+            rForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('resource-name').value.trim();
+                const phone = document.getElementById('resource-phone').value.trim();
+                const email = document.getElementById('resource-email').value.trim();
+                const service = document.getElementById('resource-service-hidden').value;
+                const link = document.getElementById('resource-link-hidden').value;
+
+                // Save to localStorage
+                let leads = JSON.parse(localStorage.getItem('sap_leads') || '[]');
+                leads.unshift({ name, phone, email, service, date: new Date().toLocaleString(), resource: true });
+                localStorage.setItem('sap_leads', JSON.stringify(leads));
+
+                // Notify owner via WhatsApp
+                const ownerMsg = `🔔 *NUEVA DESCARGA DE RECURSO*\n\n📋 *Recurso:* ${service}\n👤 *Nombre:* ${name}\n📱 *Teléfono:* ${phone}\n📧 *Correo:* ${email}\n📅 *Fecha:* ${new Date().toLocaleString()}`;
+                window.open(`https://wa.me/${waOwnerNumber}?text=${encodeURIComponent(ownerMsg)}`, '_blank');
+
+                // Close modal and redirect user
+                if (rModal) { rModal.style.display = 'none'; rModal.setAttribute('aria-hidden', 'true'); }
+                rForm.reset();
+                setTimeout(() => { window.location.href = link; }, 400);
+            });
+        }
+    })();
+    </script>
     <!-- End Google Tag Manager (noscript) -->
     <!-- GTM Noscript (Final) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLKVZGML"
