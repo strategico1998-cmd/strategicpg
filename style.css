@@ -340,6 +340,21 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     .hero-text > div { width: 100% !important; text-align: center !important; }
     .btn-large { max-width: 100%; min-width: 0; }
 
+    /* Hero quote box "Hago que mis clientes..." — fix word-per-line on mobile */
+    div[style*="inline-block"][style*="padding: 2rem 3rem"] {
+        display: block !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+    div[style*="inline-block"][style*="padding: 2rem 3rem"] p {
+        font-size: 1.15rem !important;
+        letter-spacing: 1px !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+    }
+
     /* Fix Blog and Grid on Mobile */
     .grid { grid-template-columns: 1fr !important; }
     #blog-posts-container { grid-template-columns: 1fr !important; }
