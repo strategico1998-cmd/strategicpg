@@ -396,18 +396,47 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
     }
+    .architecture-section {
+        padding: 2rem 1rem !important;
+        overflow: hidden !important;
+    }
     .architecture-section .architecture-block {
         text-align: center !important;
     }
-    .architecture-section .architecture-block h2,
+    .architecture-section .architecture-block h2 {
+        font-size: clamp(1.6rem, 8vw, 2.2rem) !important;
+        text-align: center !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
     .architecture-section .architecture-block h3 {
         text-align: center !important;
+        font-size: 0.95rem !important;
     }
     .architecture-section ul.architecture-list li {
         justify-content: center !important;
         text-align: center !important;
         flex-direction: column !important;
         align-items: center !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Service plan cards (PROPULSOR, ORBITA, EXPANSION) — center content on mobile */
+    div[style*="repeat(3, 1fr)"] article {
+        text-align: center !important;
+    }
+    div[style*="repeat(3, 1fr)"] article h3 {
+        text-align: center !important;
+    }
+    div[style*="repeat(3, 1fr)"] article p {
+        text-align: center !important;
+    }
+    div[style*="repeat(3, 1fr)"] article .btn {
+        margin: 0 auto !important;
+        display: block !important;
+        width: 100% !important;
     }
 }
 
