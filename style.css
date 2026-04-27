@@ -351,9 +351,28 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     /* Guarantee section mobile fix */
     .guarantee-inline { flex-direction: column !important; align-items: center !important; text-align: center !important; }
     .guarantee-icon-wrap { position: static !important; transform: none !important; margin: 0 auto 1.5rem !important; width: 120px !important; height: 120px !important; }
-    .guarantee-content { text-align: center !important; }
+    .guarantee-content { 
+        text-align: center !important; 
+        min-width: 0 !important;
+        width: 100% !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    .guarantee-content h2 {
+        font-size: clamp(1.4rem, 7vw, 2rem) !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: center !important;
+        line-height: 1.15 !important;
+    }
+    .guarantee-content p {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        word-break: break-word !important;
+    }
     .guarantee-inline { justify-content: center !important; }
     .guarantee-icon-wrap { margin: 2rem auto !important; }
+
     .service-details { text-align: center !important; list-style: none !important; }
     .service-details li { display: inline-block; width: 100%; }
     .guarantee-checks { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; justify-content: center !important; width: 100% !important; }
