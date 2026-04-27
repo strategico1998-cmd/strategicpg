@@ -369,8 +369,20 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     .architecture-list li { margin: 0 auto 1.2rem !important; padding-left: 0; justify-content: center !important; text-align: center !important; width: 100%; }
     .architecture-list li span { display: none; } /* Hide checkmark if centering text purely */
 
-    /* Fix B2B/Ecommerce Grid buttons sizes on Mobile */
-    .mobile-small-btn { padding: 1.2rem 0.5rem !important; font-size: 0.75rem !important; max-width: 250px; margin: 0 auto; }
+    /* Fix B2B/Ecommerce Grid buttons sizes on Mobile — equal width full column */
+    .mobile-small-btn { 
+        padding: 1.2rem 0.5rem !important; 
+        font-size: 0.75rem !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+    /* Force the parent grid to single column so both buttons are identical */
+    div[style*="minmax(150px"] {
+        grid-template-columns: 1fr !important;
+        max-width: 320px !important;
+    }
 
     /* Overflow fix */
     * { max-width: 100%; }
@@ -378,6 +390,25 @@ h3 { color: #fff; line-height: 1.2; font-size: 1.1rem; }
     .card { padding: 1.5rem 1rem; box-sizing: border-box; }
     .contact-hero { padding: 2rem 1rem; border-radius: 16px; }
     .contact-hero .grid { grid-template-columns: 1fr !important; }
+
+    /* Services page: Architecture section (2nd block) — center everything on mobile */
+    .architecture-section .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    .architecture-section .architecture-block {
+        text-align: center !important;
+    }
+    .architecture-section .architecture-block h2,
+    .architecture-section .architecture-block h3 {
+        text-align: center !important;
+    }
+    .architecture-section ul.architecture-list li {
+        justify-content: center !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
 }
 
 @media (max-width: 480px) {
