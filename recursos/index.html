@@ -147,7 +147,6 @@
     <script>
     // Resource Download Modal Logic
     (function() {
-        const waOwnerNumber = "573228708724";
         const modal = document.getElementById('resource-modal');
         const closeBtn = document.querySelector('.close-resource-modal');
         const form = document.getElementById('resource-download-form');
@@ -180,7 +179,7 @@
             }
         });
 
-        // Form submit
+        // Form submit — redirect directly, no WhatsApp visible
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -190,28 +189,18 @@
                 const service = document.getElementById('resource-service-hidden').value;
                 const link = document.getElementById('resource-link-hidden').value;
 
-                // Save to localStorage
+                // Save lead data silently to localStorage
                 let leads = JSON.parse(localStorage.getItem('sap_leads') || '[]');
                 leads.unshift({ name, phone, email, service, date: new Date().toLocaleString(), resource: true });
                 localStorage.setItem('sap_leads', JSON.stringify(leads));
 
-                // Send to owner via WhatsApp (opens in background tab attempt)
-                const ownerMsg = `🔔 *NUEVA DESCARGA DE RECURSO*\n\n📋 *Recurso:* ${service}\n👤 *Nombre:* ${name}\n📱 *Teléfono:* ${phone}\n📧 *Correo:* ${email}\n📅 *Fecha:* ${new Date().toLocaleString()}`;
-                const encodedOwnerMsg = encodeURIComponent(ownerMsg);
-                const waUrl = `https://wa.me/${waOwnerNumber}?text=${encodedOwnerMsg}`;
-
-                // Open WhatsApp notification in new tab (background)
-                const waWindow = window.open(waUrl, '_blank');
-
-                // Close modal and reset
+                // Close modal and reset form
                 modal.style.display = 'none';
                 modal.setAttribute('aria-hidden', 'true');
                 form.reset();
 
-                // Redirect user to the resource after short delay
-                setTimeout(() => {
-                    window.location.href = link;
-                }, 400);
+                // Redirect user directly to the resource
+                window.location.href = link;
             });
         }
     })();
